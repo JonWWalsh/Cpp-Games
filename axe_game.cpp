@@ -36,12 +36,20 @@ int main()
 
     SetTargetFPS(60); // sets target value for the # of times the window will update each second
     while(WindowShouldClose() == false) { //As long as WindowShouldClose is == false the window will stay open, once the x or escape is triggered, the value changes to true.
-
+        if (IsKeyPressed(KEY_G))
+        {
+            circle_x = 200;
+            circle_y = 200;
+            circle_radius = 25;
+            collision_with_axe = false;
+        } else {
+            
+        }
         BeginDrawing();
         ClearBackground(WHITE); //ClearBackground must be used to avoid flickering as the image updates.
         if (collision_with_axe)
         {
-            DrawText("Game Over!", 250, 200, 20, RED);
+            DrawText("Game Over!  Press G to restart", 250, 200, 20, RED);
         } else {
 
         // game logic begins
